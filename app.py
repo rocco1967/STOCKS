@@ -56,10 +56,10 @@ st.markdown(
     """
     <style>
     textarea {
-        font-size: 2rem !important;
+        font-size: 1rem !important;
     }
     input {
-        font-size: 2rem !important;
+        font-size: 1rem !important;
     }
     </style>
     """,
