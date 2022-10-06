@@ -27,7 +27,7 @@ tickers=st.selectbox('SCEGLI UN SIMBOLO' ,('CL=F', 'AAPL','MSFT'))
 #st.header=('MSFT  e^ MICROSOFT')
 #tickers=st.selectbox('SCEGLI UN SIMBOLO' ,('CL=F', 'AAPL','MSFT'))
               
-st.write('HAI SELEZIONATO:' ,tickers)                      
+#st.write('HAI SELEZIONATO:' ,tickers)                      
 #tickers=('CL=F')
 def new_data():
     #tickers=st.text_input('SIMBOLO')
