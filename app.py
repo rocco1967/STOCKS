@@ -21,6 +21,10 @@ st.image(image)
 st.title('..............STOCK_FORECAST...........')
 st.subheader('i simboli degli stocks sono di YAHOO FINANCE')
 tickers=st.selectbox('SCEGLI UN SIMBOLO' ,('CL=F', 'AAPL','MSFT'))
+st.subheader=('CL=F  e^ CRUDE OIL')
+st.subheader=('AAPL  e^ APPLE')
+st.subheader=('MSFT  e^ MICROSOFT')
+              
 st.write('HAI SELEZIONATO:' ,tickers)                      
 #tickers=('CL=F')
 def new_data():
