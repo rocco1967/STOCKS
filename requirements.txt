@@ -1,0 +1,7 @@
+sklearn
+pickle5
+pandas
+streamlit
+Pillow
+yfinance
+linear-tree

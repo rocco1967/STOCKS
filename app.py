@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Oct  6 13:05:02 2022
+
+@author: 39333
+"""
+import numpy as np
+import pandas as pd
+import pickle
+import json
+data = pd.read_csv(r"C:\Users\39333\desktop\ANACONDA\FuelConsumption.csv")
+from sklearn.preprocessing import StandardScaler,MinMaxScaler
+import yfinance as yf
+import streamlit as st
+from sklearn.linear_model import SGDRegressor
+from PIL import Image
+#from lineartree import LinearTreeRegressor,SGDRegressor
+image=Image.open('sfera.JPG')
+st.image(image)
+st.title('..............STOCK_FORECAST...........')
+st.subheader('i simboli degli stocks sono di YAHOO FINANCE')
+tickers=st.selectbox('SCEGLI UN SIMBOLO' ,('CL=F', 'AAPL','MSFT'))
+st.write('HAI SELEZIONATO:' ,tickers)                      
+#tickers=('CL=F')
+def new_data():
+    #tickers=st.text_input('SIMBOLO')
+    data1=yf.download(tickers = tickers,period="12d",interval='1d',auto_adjust=True)
+    #data#=data.T#=data['Close']#[:-1]
+    data1=(data1['Close'])
+    data1=data1.reset_index()
+    data1['Date'] = pd.to_datetime(data1['Date'],format='%Y%m%d').dt.date
+    data1=data1.set_index('Date')
+    data1.fillna(data1.mean(),inplace=True)
+    #data1['CL=F'] = data1['CL=F'].fillna(data1['CL=F'].rolling(2).mean())
+    return data1[:-1]
+model = pickle.load(open('stocks.pk','rb'))
+x1=(new_data()[-7:].values.flatten()).reshape(1,-1)
+yhat=model.predict(x1).round(2)
+#st.title('........STOCK_FORECAST.........')
+st.markdown(
+    """
+    <style>
+    textarea {
+        font-size: 2rem !important;
+    }
+    input {
+        font-size: 2rem !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+if st.button('FORECAST'):
+   prediction=yhat
+   st.success(f' FORECAST ... +- 2% ..   {prediction[0]:.2f} USD')
