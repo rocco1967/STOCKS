@@ -18,7 +18,7 @@ from PIL import Image
 from lineartree import LinearTreeRegressor,LinearBoostRegressor
 image=Image.open('sfera.JPG')
 st.image(image)
-st.subheader('...................MERLIN.....................')
+st.header('...................MERLIN.....................')
 st.title('...............STOCK_FORECAST.............')
 st.markdown('(CL=F)=CRUDE_OIL', unsafe_allow_html=False)
 st.markdown('AAPL= APPLE', unsafe_allow_html=False)
