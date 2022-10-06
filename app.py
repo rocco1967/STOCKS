@@ -25,7 +25,7 @@ tickers=st.selectbox('SCEGLI UN SIMBOLO' ,('CL=F', 'AAPL','MSFT'))
 #st.header=('CL=F  e^ CRUDE OIL')
 #st.header=('AAPL  e^ APPLE')
 #st.header=('MSFT  e^ MICROSOFT')
-#tickers=st.selectbox('SCEGLI UN SIMBOLO' ,('CL=F', 'AAPL','MSFT'))
+#tickers=st.selectbox('SCEGLI UN SIMBOLO..CLF=CRUDE_OIL..AAPL=APPLE...MSFT=MICROSOFT ' ,('CL=F', 'AAPL','MSFT'))
               
 #st.write('HAI SELEZIONATO:' ,tickers)                      
 #tickers=('CL=F')
