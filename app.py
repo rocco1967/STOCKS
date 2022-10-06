@@ -15,7 +15,7 @@ import yfinance as yf
 import streamlit as st
 from sklearn.linear_model import SGDRegressor
 from PIL import Image
-from lineartree import LinearTreeRegressor,SGDRegressor
+from lineartree import LinearTreeRegressor,LinearBoostRegressor
 image=Image.open('sfera.JPG')
 st.image(image)
 st.title('..............STOCK_FORECAST...........')
