@@ -19,7 +19,7 @@ from lineartree import LinearTreeRegressor,LinearBoostRegressor
 image=Image.open('sfera.JPG')
 st.image(image)
 st.title('..............STOCK_FORECAST...........')
-st.subheader('i simboli degli stocks sono di YAHOO FINANCE')
+st.header('i simboli degli stocks sono di YAHOO FINANCE')
 tickers=st.selectbox('SCEGLI UN SIMBOLO' ,('CL=F', 'AAPL','MSFT'))
 #st.subheader=('CL=F  e^ CRUDE OIL')
 #st.subheader=('AAPL  e^ APPLE')
