@@ -57,7 +57,8 @@ st.sidebar.subheader('AGGIORNAMENTO AUTOMATICO DA YAHOO FINANCE ORARIO NEW YORK'
 #st.sidebar.subheader('ORARIO NEW YORK')
 st.sidebar.subheader('ULTIMI DATI IN ARCHIVIO DEL SIMBOLO SCELTO PER IL CALCOLO')
 st.sidebar.write(new_data()[-7:])#(f'ULTIMi DATO IN ARCHIVIO {new_data[-1:]:.2f}')
-st.sidebar.info('INFO.....gianfranco.fa@gmail.com')
+st.sidebar.write('PER INFORMAZIONI.....')
+st.sidebar.info('gianfranco.fa@gmail.com')
    
 st.markdown(
     """
