@@ -56,7 +56,7 @@ yhat=model.predict(x1).round(2)
 st.sidebar.subheader('AGGIORNAMENTO AUTOMATICO DA YAHOO FINANCE')
 st.sidebar.subheader('ORARIO NEW YORK')
 st.sidebar.subheader('ULTIMI DATI IN ARCHIVIO DEL SIMBOLO SCELTO PER IL CALCOLO')
-st.sidebar.write(new_data())#(f'ULTIMi DATO IN ARCHIVIO {new_data[-1:]:.2f}')
+st.sidebar.write(new_data()[-7:])#(f'ULTIMi DATO IN ARCHIVIO {new_data[-1:]:.2f}')
 st.markdown(
     """
     <style>
