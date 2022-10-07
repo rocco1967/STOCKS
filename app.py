@@ -19,11 +19,11 @@ from sklearn.linear_model import SGDRegressor
 from PIL import Image
 from lineartree import LinearTreeRegressor,LinearBoostRegressor
 image=Image.open('sfera.JPG')
-image = image.resize((1000, 400),Image.ANTIALIAS)
+image = image.resize((1000, 400))
 st.image(image)
 #st.subheader('..........................MERLIN.........................')
 st.subheader('..........................MERLIN_STOCK_FORECAST.......................')
-st.markdown('(CL=F)=CRUDE_OIL', unsafe_allow_html=False)
+st.markdown('(CL=F)=CRUDE_OIL(WTI)', unsafe_allow_html=False)
 st.markdown('AAPL= APPLE', unsafe_allow_html=False)
 st.markdown('MSFT=MICROSOFT', unsafe_allow_html=False)
 #st.header=('CLF  e^ CRUDE OIL')
