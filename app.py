@@ -49,7 +49,7 @@ def new_data():
     data1=data1.set_index('Date')
     data1.fillna(data1.mean(),inplace=True)
     #data1['CL=F'] = data1['CL=F'].fillna(data1['CL=F'].rolling(2).mean())
-    return data1[:-1]
+    return data1#[:-1]
 model = pickle.load(open('stocks.pk','rb'))
 x1=(new_data()[-7:].values.flatten()).reshape(1,-1)
 yhat=model.predict(x1).round(2)
