@@ -17,7 +17,7 @@ from sklearn.linear_model import SGDRegressor
 from PIL import Image
 from lineartree import LinearTreeRegressor,LinearBoostRegressor
 image=Image.open('sfera.JPG')
-image = image.resize((1000, 600),Image.ANTIALIAS)
+image = image.resize((1000, 400),Image.ANTIALIAS)
 st.image(image)
 #st.subheader('..........................MERLIN.........................')
 st.title('........MERLIN_STOCK_FORECAST.......')
