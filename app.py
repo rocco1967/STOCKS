@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 import pickle
 import json
+import time
+data=time.strftime("%d/%m/%Y")
 #data = pd.read_csv(r"C:\Users\39333\desktop\ANACONDA\FuelConsumption.csv")
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler,MinMaxScaler
@@ -76,3 +78,4 @@ st.markdown(
 if st.button('FORECAST'):
    prediction=yhat
    st.success(f' FORECAST ... +- 2% ..   {prediction[0]:.2f} USD')
+st.write(f' OGGI è ...   {data} ')
