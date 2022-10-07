@@ -82,4 +82,4 @@ st.markdown(
 if st.button('FORECAST'):
    prediction=yhat
    st.success(f' FORECAST ... +- 2% ..   {prediction[0]:.2f} USD')
-st.write(f' OGGI è ...   {data} ')
+st.subheader(f' OGGI è ...   {data} ')
