@@ -53,6 +53,8 @@ x1=(new_data()[-7:].values.flatten()).reshape(1,-1)
 yhat=model.predict(x1).round(2)
 #st.title('........STOCK_FORECAST.........')
 st.sidebar.subheader('ULTIMO DATO IN ARCHIVIO DEL SIMBOLO SCELTO PER IL CALCOLO')
+st.sidebar.subheader('AGGIORNAMENTO AUTOMATICO DA YAHOO FINANCE')
+st.sidebar.subheader('ORARIO NEW YORK')
 st.sidebar.write(new_data()[-1:])#(f'ULTIMO DATO IN ARCHIVIO {new_data[-1:]:.2f}')
 st.markdown(
     """
