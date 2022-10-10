@@ -18,6 +18,7 @@ import streamlit as st
 from sklearn.linear_model import SGDRegressor
 from PIL import Image
 from lineartree import LinearTreeRegressor,LinearBoostRegressor
+from datetime import datetime,date,timedelta
 image=Image.open('sfera.JPG')
 image = image.resize((1000, 400))
 st.image(image)
@@ -39,6 +40,7 @@ tickers=st.selectbox('SCEGLI UN SIMBOLO.....' ,('CL=F', 'AAPL','MSFT'))
               
 #st.write('HAI SELEZIONATO:' ,tickers)                      
 #tickers=('CL=F')
+now = date.today()
 def new_data():
     #tickers=st.text_input('SIMBOLO')
     data1=yf.download(tickers = tickers,period="12d",interval='1d',auto_adjust=True)
@@ -54,6 +56,10 @@ def new_data():
         #data1=data1
        
     return data1#[:-1]
+if new_data()[-1:].index.values==np.array(now):
+   new_data=new_data()[:-1]
+else:
+    new_data=new_data() 
 model = pickle.load(open('stocks.pk','rb'))
 x1=(new_data()[-7:].values.flatten()).reshape(1,-1)
 yhat=model.predict(x1).round(2)
