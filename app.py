@@ -19,7 +19,7 @@ from sklearn.linear_model import SGDRegressor
 from PIL import Image
 from lineartree import LinearTreeRegressor,LinearBoostRegressor
 from datetime import datetime,date,timedelta
-@st.cache
+#@st.cache
 image=Image.open('sfera.JPG')
 image = image.resize((1000, 400))
 st.image(image)
@@ -42,6 +42,7 @@ tickers=st.selectbox('SCEGLI UN SIMBOLO.....' ,('CL=F', 'AAPL','MSFT'))
 #st.write('HAI SELEZIONATO:' ,tickers)                      
 #tickers=('CL=F')
 now = date.today()
+@st.cache
 def new_data():
     #tickers=st.text_input('SIMBOLO')
     data1=yf.download(tickers = tickers,period="12d",interval='1d',auto_adjust=True)
