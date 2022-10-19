@@ -9,6 +9,7 @@ import pandas as pd
 import pickle
 import json
 import time
+from datetime import datetime
 data=time.strftime("%d/%m/%Y")
 #data = pd.read_csv(r"C:\Users\39333\desktop\ANACONDA\FuelConsumption.csv")
 from sklearn.pipeline import Pipeline
@@ -91,4 +92,6 @@ if st.button('FORECAST'):
    prediction=yhat
    st.subheader(f' FORECAST PER IL GIORNO DOPO ... +- 2% ..   {prediction[0]:.2f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
-st.write(now)
+now2 = datetime.now()
+current_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
+st.write(now2)
