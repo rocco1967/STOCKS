@@ -91,3 +91,4 @@ if st.button('FORECAST'):
    prediction=yhat
    st.subheader(f' FORECAST PER IL GIORNO DOPO ... +- 2% ..   {prediction[0]:.2f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
+st.write(now)
