@@ -90,7 +90,7 @@ st.markdown(
 )
 if st.button('FORECAST'):
    prediction=yhat
-   st.subheader(f' FORECAST PER IL GIORNO DOPO ... +- 2% ..   {prediction[0]:.2f} USD')
+   st.subheader(f' FORECAST + un giorno in archivio ... +- 2% ..   {prediction[0]:.2f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
 now2 = datetime.now()
 server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
