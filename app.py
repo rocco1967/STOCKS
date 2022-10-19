@@ -93,5 +93,5 @@ if st.button('FORECAST'):
    st.subheader(f' FORECAST PER IL GIORNO DOPO ... +- 2% ..   {prediction[0]:.2f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
 now2 = datetime.now()
-current_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
-st.write(now2)
+server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
+st.write(server_time)
