@@ -9,7 +9,8 @@ import pandas as pd
 import pickle
 import json
 import time
-from xgboost import XGBRegressor
+#from xgboost import XGBRegressor
+from sklearn.ensemble import RandomForestRegressor
 from datetime import datetime
 data=time.strftime("%d/%m/%Y")
 #data = pd.read_csv(r"C:\Users\39333\desktop\ANACONDA\FuelConsumption.csv")
