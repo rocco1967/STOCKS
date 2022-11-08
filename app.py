@@ -48,7 +48,7 @@ now = date.today()
 @st.cache
 def new_data():
     #tickers=st.text_input('SIMBOLO')
-    data1=yf.download(tickers = tickers,period="12d",interval='1d',auto_adjust=True)
+    data1=yf.download(tickers = tickers,period="25d",interval='1d',auto_adjust=True)
     #data#=data.T#=data['Close']#[:-1]
     data1=(data1['Close'])
     data1=data1.reset_index()
@@ -90,7 +90,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-new_data3=(new_data.values.flatten()).round(2)
+new_data3=(new_data[-14:].values.flatten()).reshape(1,-1)
 yhat2=model.predict(new_data3)
 st.write(yhat2)
 #st.subheader(new_data3)
