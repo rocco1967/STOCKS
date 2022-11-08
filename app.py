@@ -91,7 +91,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 if st.button('FORECAST'):
-   prediction=np.where(yhat>filter,yhat,0)
+   prediction=np.where(yhat>'filter',yhat,0)
    st.subheader(f' FORECAST + un giorno in archivio ... +- 2% ..   {prediction[0]:.2f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
 now2 = datetime.now()
