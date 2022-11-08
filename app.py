@@ -91,10 +91,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 new_data3=(new_data[-14:].values.flatten()).reshape(1,-7)
-#yhat2=model.predict(new_data3)
-#dfyhat = pd.DataFrame(data=yhat2 )
-#change=abs(dfyhat.pct_change().dropna())
-#st.write(change)
+yhat2=model.predict(new_data3)
+dfyhat = pd.DataFrame(data=yhat2 )
+change=abs(dfyhat.pct_change().dropna())
+st.write(change)
 #st.subheader(new_data3)
 if st.button('FORECAST'):
    prediction=yhat#np.where(yhat>'filter',yhat,0)
