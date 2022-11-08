@@ -90,10 +90,10 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-new_data3=(new_data.values.flatten()).reshape(1,-1)
+new_data3=(new_data.values.flatten())#.reshape(1,-1)
 #yhat2=model.predict(new_data3)
 #st.write(yhat2)
-#st.subheader(new_data3)
+st.subheader(new_data3)
 if st.button('FORECAST'):
    prediction=yhat#np.where(yhat>'filter',yhat,0)
    st.subheader(f' FORECAST + un giorno in archivio ... +- 2% ..   {prediction[0]:.2f} USD')
