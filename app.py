@@ -94,7 +94,7 @@ new_data3=(new_data[-14:].values.flatten()).reshape(-1,7)
 yhat2=model.predict(new_data3)
 dfyhat = pd.DataFrame(data=yhat2 )
 change=abs(dfyhat.pct_change().dropna())
-yhat2=np.where(change>0.015,yhat,flat)
+yhat2=np.where(change>0.015,yhat,0)
 #st.write(change)
 #st.subheader(new_data3)
 if st.button('FORECAST'):
