@@ -97,7 +97,7 @@ change=abs(dfyhat.pct_change().dropna())
 #st.write(change)
 #st.subheader(new_data3)
 if st.button('FORECAST'):
-   prediction=np.where(change>0.015,yhat,0)
+   prediction=np.where('change'>0.015,yhat,0)
    st.subheader(f' FORECAST + un giorno in archivio ... +- 2% ..   {prediction[0]:.2f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
 now2 = datetime.now()
