@@ -90,7 +90,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-new_data3=new_data.flatten()
+new_data3=new_data.values.flatten()
 st.write(new_data3)
 if st.button('FORECAST'):
    prediction=yhat#np.where(yhat>'filter',yhat,0)
