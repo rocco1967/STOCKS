@@ -76,7 +76,7 @@ st.sidebar.subheader('ULTIMI DATI IN ARCHIVIO DEL SIMBOLO SCELTO PER IL CALCOLO'
 st.sidebar.write(new_data[-7:])#(f'ULTIMi DATO IN ARCHIVIO {new_data[-1:]:.2f}')
 #st.sidebar.write('PER INFORMAZIONI.....')
 st.sidebar.info('gianfranco.fa@gmail.com')
-   
+filter=   abs((yhat[-1:]/yhat[-2:-1])-1)
 st.markdown(
     """
     <style>
@@ -91,7 +91,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 if st.button('FORECAST'):
-   prediction=yhat
+   prediction=np.where(yhat>filter,yhat,'FLAT')
    st.subheader(f' FORECAST + un giorno in archivio ... +- 2% ..   {prediction[0]:.2f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
 now2 = datetime.now()
