@@ -97,7 +97,7 @@ change=abs(dfyhat.pct_change().dropna())
 yhat2=np.where(change>0.015,'TRADE','STAY_FLAT')
 st.subheader(yhat2)
 #st.subheader(new_data3)
-if st.button('FORECAST'):
+if st.button('FORECAST_CRUDE-OIL'):
    prediction=yhat#np.where('change'>0.015,yhat,0)
    st.subheader(f' FORECAST + un giorno in archivio ... +- 2% ..   {prediction[0]:.2f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
