@@ -62,7 +62,7 @@ def new_data():
 #return data1### extra  
     return data1[:-1]#####
 if new_data()[-1:].index.values==np.array(now):#######
-   new_data=new_data()[:-1]####
+   new_data=new_data()#[:-1]####
 else:#####
    new_data=new_data() 
 model = pickle.load(open('stocks.pk','rb'))
