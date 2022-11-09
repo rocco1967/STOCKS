@@ -60,7 +60,7 @@ def new_data():
     #else:
         #data1=data1
 #return data1### extra  
-    return data1#[:-1]#####
+    return data1[:-1]#####
 if new_data()[-1:].index.values==np.array(now):#######
    new_data=new_data()[:-1]####
 else:#####
