@@ -65,7 +65,7 @@ if new_data()[-1:].index.values==np.array(now):#######
    new_data=new_data()[:-1]####
 else:#####
    new_data=new_data() 
-model = pickle.load(open('stocks.pk','rb'))
+model = pickle.load(open('stocks_RF.pk','rb'))
 x1=(new_data[-7:].values.flatten()).reshape(-1,7)
 yhat=model.predict(x1).round(2)
 #st.title('........STOCK_FORECAST.........')
