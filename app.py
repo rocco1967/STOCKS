@@ -98,6 +98,7 @@ x_new_data3 = []
 for i in range(lookback_window, len(new_data3)):
     x_new_data3.append(new_data3.shift(-1)[i-lookback_window:i])
 x_new_data3 = np.array(x_new_data3)
+st.subheader('.....................MATRICE_DI_CALCOLO....................')
 st.write(((x_new_data3.flatten().reshape(-1,7)))[-7:])
 
 
