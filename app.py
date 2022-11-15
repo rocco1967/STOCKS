@@ -92,7 +92,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 ###################################################################
-new_data3=new_data.values
+new_data3=new_data
 lookback_window = 7
 x_new_data3 = []
 for i in range(lookback_window, len(new_data3)):
