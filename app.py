@@ -48,7 +48,7 @@ now = date.today()
 @st.cache
 def new_data():
     #tickers=st.text_input('SIMBOLO')
-    data1=yf.download(tickers = tickers,period="2000d",interval='1d',auto_adjust=True)
+    data1=yf.download(tickers = tickers,period="100d",interval='1d',auto_adjust=True)
     #data#=data.T#=data['Close']#[:-1]
     data1=(data1['Close'])
     data1=data1.reset_index()
@@ -76,7 +76,7 @@ st.sidebar.subheader('ULTIMI 7 DATI IN ARCHIVIO DEL WTI PER IL CALCOLO')
 st.sidebar.write(new_data[-7:])#(f'ULTIMi DATO IN ARCHIVIO {new_data[-1:]:.2f}')
 #st.sidebar.write('PER INFORMAZIONI.....')
 st.sidebar.info('gianfranco.fa@gmail.com')
-filter=   abs((yhat[-1:]/yhat[-2:-1])-1)
+#filter=   abs((yhat[-1:]/yhat[-2:-1])-1)
 st.markdown(
     """
     <style>
@@ -90,8 +90,20 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-new_data3=(new_data[-21:].values.flatten()).reshape(-1,7)
-yhat2=model.predict(new_data3)
+###################################################################
+new_data3=new_data[-49:]
+lookback_window = 7
+x_new_data3 = []
+for i in range(lookback_window, len(new_data3)):
+    x_new_data3.append(new_data3.shift(-1)[i-lookback_window:i])
+    x_new_data3 = np.array(x_new_data3)
+
+
+
+
+
+#new_data3=(new_data[-21:].values.flatten()).reshape(-1,7)
+yhat2=model.predict(x_new_data3)
 dfyhat = pd.DataFrame(data=yhat2 )
 change=abs(dfyhat.pct_change().dropna())
 #yhat2=np.where(change>0.015,'TRADE','STAY_FLAT')###  ORIGINALE
