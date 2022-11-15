@@ -23,7 +23,7 @@ from PIL import Image
 from lineartree import LinearTreeRegressor,LinearBoostRegressor
 from datetime import datetime,date,timedelta
 #@st.cache
-image=Image.open('sfera.JPG')
+image=Image.open('petrolio.JPG')#('sfera.JPG')
 image = image.resize((1000, 400))
 st.image(image)
 #st.subheader('..........................MERLIN.........................')
