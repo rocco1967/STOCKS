@@ -68,7 +68,7 @@ else:#####
 model = pickle.load(open('stocks_RF.pk','rb'))
 x1=(new_data[-7:].values.flatten()).reshape(-1,7)
 yhat=model.predict(x1).round(2)
-st.write(new_data[-7:])
+
 #st.title('........STOCK_FORECAST.........')
 #st.sidebar.subheader('ULTIMO DATO IN ARCHIVIO DEL SIMBOLO SCELTO PER IL CALCOLO')
 st.sidebar.subheader('AGGIORNAMENTO AUTOMATICO DA YAHOO FINANCE ORARIO NEW YORK')
@@ -92,7 +92,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 ###################################################################
-new_data3=new_data[-49:]
+new_data3=new_data.values
 lookback_window = 7
 x_new_data3 = []
 for i in range(lookback_window, len(new_data3)):
