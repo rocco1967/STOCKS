@@ -45,7 +45,7 @@ tickers=('CL=F')#st.selectbox('SCEGLI UN SIMBOLO.....' ,('CL=F','CL=F'))#, 'AAPL
 #st.write('HAI SELEZIONATO:' ,tickers)                      
 #tickers=('CL=F')
 now = date.today()
-@st.cache
+#@st.cache
 def new_data():
     #tickers=st.text_input('SIMBOLO')
     data1=yf.download(tickers = tickers,period="2000d",interval='1d',auto_adjust=True)
