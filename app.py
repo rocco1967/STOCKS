@@ -26,7 +26,7 @@ from datetime import datetime,date,timedelta
 image=Image.open('petrolio.JPG')#('sfera.JPG')
 image = image.resize((1000, 400))
 st.image(image)
-#st.markdown('---')
+st.markdown('---')
 #st.subheader('..........................MERLIN.........................')
 st.subheader('.........................CRUDE_OIL_WTI_FORECAST.....................')
 #st.markdown('(CL=F)=CRUDE_OIL(WTI)', unsafe_allow_html=False)
