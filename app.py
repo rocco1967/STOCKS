@@ -119,4 +119,6 @@ if st.button('FORECAST_CRUDE-OIL'):
 #st.subheader(f' OGGI è ...   {data} ')
 now2 = datetime.now()
 server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
+image2=Image.open('petrolio.JPG')#('sfera.JPG')
+st.image(image2)
 st.write(server_time)
