@@ -107,8 +107,9 @@ st.write(((x_new_data3.flatten().reshape(-1,7)))[-7:])
 
 #new_data3=(new_data[-21:].values.flatten()).reshape(-1,7)
 yhat2=model.predict((x_new_data3.flatten().reshape(-1,7))[-5:])##
-st.write((x_new_data3[-5:]).reshape(-1,7))
+#st.write((x_new_data3[-5:]).reshape(-1,7))
 dfyhat = pd.DataFrame(data=yhat2 )
+st.write(dfyhat)
 #change=abs(dfyhat.pct_change().dropna())
 #yhat2=np.where(change>0.015,'TRADE','STAY_FLAT')###  ORIGINALE
 yhat2=np.where(dfyhat.pct_change()>0.014999,'TRADE_LONG',(np.where(dfyhat.pct_change()<-0.014999,'TRADE_SHORT','FLAT')))
