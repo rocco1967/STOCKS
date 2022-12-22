@@ -106,7 +106,7 @@ st.write(((x_new_data3.flatten().reshape(-1,7)))[-7:])
 
 
 #new_data3=(new_data[-21:].values.flatten()).reshape(-1,7)
-yhat2=model.predict((x_new_data3.flatten().reshape(-1,7))[-10:])##
+yhat2=model.predict((x_new_data3.flatten().reshape(-1,7))[-9:])##
 #st.write((x_new_data3[-5:]).reshape(-1,7))
 dfyhat = pd.DataFrame(data=yhat2 )
 st.write(dfyhat)
