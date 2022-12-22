@@ -110,7 +110,7 @@ yhat2=model.predict(x_new_data3.flatten().reshape(-1,7))
 dfyhat = pd.DataFrame(data=yhat2 )
 #change=abs(dfyhat.pct_change().dropna())
 #yhat2=np.where(change>0.015,'TRADE','STAY_FLAT')###  ORIGINALE
-yhat2=np.where(dfyhat.pct_change()=>0.015,'TRADE_LONG',(np.where(dfyhat.pct_change()=<-0.015,'TRADE_SHORT','FLAT')))
+yhat2=np.where(dfyhat.pct_change()>0.014999,'TRADE_LONG',(np.where(dfyhat.pct_change()<-0.014999,'TRADE_SHORT','FLAT')))
 st.subheader(yhat2[-1:])
 #st.subheader(new_data3)
 if st.button('FORECAST_CRUDE-OIL'):
