@@ -153,8 +153,8 @@ data['Target']=data['Target'].fillna(data['Target'].shift(1))
 #x=data.drop('Target')
 #y=data['Target']
 #data#.corr()
-startdate = pd.to_datetime("2022-11-15").date()
-enddate = pd.to_datetime("2022-12-22").date()
+#startdate = pd.to_datetime("2022-11-15").date()
+#enddate = pd.to_datetime("2022-12-22").date()
 #data#.loc[startdate:enddate].shape
 from sklearn.model_selection import train_test_split
 data=data['CL=F'].values# se si usa il multicross al posto di Close mettere il Ticker
