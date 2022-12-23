@@ -152,8 +152,8 @@ data['Target']=data['CL=F'].shift(-1)     #  ORIGINALE
 data['Target']=data['Target'].fillna(data['Target'].shift(1))
 #x=data.drop('Target')
 #y=data['Target']
-data#.corr()
+#data#.corr()
 startdate = pd.to_datetime("2022-11-15").date()
 enddate = pd.to_datetime("2022-12-22").date()
-data#.loc[startdate:enddate].shape
+#data#.loc[startdate:enddate].shape
 
