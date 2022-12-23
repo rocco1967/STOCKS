@@ -156,4 +156,34 @@ data['Target']=data['Target'].fillna(data['Target'].shift(1))
 startdate = pd.to_datetime("2022-11-15").date()
 enddate = pd.to_datetime("2022-12-22").date()
 data#.loc[startdate:enddate].shape
+from sklearn.model_selection import train_test_split
+data=data['CL=F'].values# se si usa il multicross al posto di Close mettere il Ticker
 
+data=data[data>0]#.copy()
+lookback_window = 7
+#data2 = data2.values
+x, y = [], []
+for i in range(lookback_window, len(data)):
+    x.append(data[i - lookback_window:i])
+    y.append(data[i])
+x = np.array(x)
+y = np.array(y)
+x.reshape(-1,1),y.reshape(-1,1)
+x_train, x_test, y_train, y_test = train_test_split(
+x, y, test_size=0.33, shuffle=False)
+from sklearn.model_selection import cross_val_score
+
+#pipe=CatBoostRegressor(verbose=False,iterations=1000,
+                      #learning_rate=0.01,
+                      #posterior_sampling=True,
+                      #bootstrap_type='Bayesian',
+                      #bagging_temperature=.1)#XGBRegressor(max_depth=6)#max_depth=3,n_estimators=100,tree_method='hist',
+                 #)#verbose=False,depth=3,iterations=100)#,learning_rate=0.02)
+#pipe=RandomForestRegressor()
+#pipe=MLPRegressor()
+#pipe.fit(x_train,y_train)
+
+#pickle.dump(pipe,open('stocks_LGBM.pk','wb'))
+model = pickle.load(open('stocks_RF.pk','rb'))
+#model.fit(x_train,y_train)
+pred=model.predict(x_test)
