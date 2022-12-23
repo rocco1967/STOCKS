@@ -128,4 +128,32 @@ st.write('MERLIN SYSTEM FROM 15 NOVEMBER 2022 (publication date)')
 st.write(server_time)
 #st.write(yhat2.reshape(-1,len(yhat2)))
 ##############################################################   EQUITY #############################################################################
-st.write(new_data)
+now = date.today()
+
+tickers=('CL=F,AAPL,MSFT,NG=F')#,VIX')#yahoo finance  tickers names
+#tickers=(['CL=F','AAPL','MSFT','NG=F','NQ=F','VIX','GC=F'])
+
+def data():
+    data=yf.download(tickers =tickers,period="2000d",interval='1d',auto_adjust=True)
+    data=(data['Close'])
+    data=data[data>0]
+    data=data.reset_index()
+    data['Date'] = pd.to_datetime(data['Date'], format='%Y%m%d').dt.date
+    data=data.set_index('Date').dropna()
+    return data
+data=data()
+if data[-1:].index.values==np.array(now):
+    data=data[:-1]
+else:
+    data=data.round(2)
+#data    
+data['Target']=data['CL=F'].shift(-1)     #  ORIGINALE
+#data['Target']=data['Close'].shift(-1)     #  SINGOLO CROSS  
+data['Target']=data['Target'].fillna(data['Target'].shift(1))
+#x=data.drop('Target')
+#y=data['Target']
+data#.corr()
+startdate = pd.to_datetime("2022-11-15").date()
+enddate = pd.to_datetime("2022-12-22").date()
+data#.loc[startdate:enddate].shape
+
