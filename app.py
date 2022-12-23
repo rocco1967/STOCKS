@@ -127,3 +127,5 @@ server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
 st.write('MERLIN SYSTEM FROM 15 NOVEMBER 2022 (publication date)')
 st.write(server_time)
 #st.write(yhat2.reshape(-1,len(yhat2)))
+##############################################################   EQUITY #############################################################################
+st.write(new_data)
