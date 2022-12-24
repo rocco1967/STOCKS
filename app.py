@@ -158,4 +158,4 @@ x.reshape(-1,1),y.reshape(-1,1)
 x_train, x_test, y_train, y_test = train_test_split(
 x, y, test_size=0.33, shuffle=False)
 model = pickle.load(open('stocks_RF.pk','rb'))
-pred=model.predict(x_test)
+#pred=model.predict(x_test)
