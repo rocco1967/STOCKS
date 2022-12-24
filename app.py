@@ -194,5 +194,5 @@ system=(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280)#,color='
 real=((df_roll['real_roll_%change']*10000).cumsum()+10000+150)#,color='black',label='REALE')
 #plt.legend(loc="upper center")
 st.write(system)
-#fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(7, 3))
 st.pyplot(fig=system,clear_figure=True)
