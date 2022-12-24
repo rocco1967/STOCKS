@@ -190,6 +190,6 @@ from matplotlib.pyplot import figure
 #plt.plot((df_roll['pred_roll_%change']).rolling(7).std())
 
 equity=((1000*df_roll['equity_sl']).cumsum()+10000)
-st.pyplot(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280,color='red',label='MERLIN_SYSTEM')
-st.pyplot((df_roll['real_roll_%change']*10000).cumsum()+10000+150,color='black',label='REALE')
+st.pyplot(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280)#,color='red',label='MERLIN_SYSTEM')
+st.pyplot((df_roll['real_roll_%change']*10000).cumsum()+10000+150)#,color='black',label='REALE')
 #plt.legend(loc="upper center")
