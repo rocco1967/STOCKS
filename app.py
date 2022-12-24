@@ -128,6 +128,7 @@ st.write('MERLIN SYSTEM FROM 15 NOVEMBER 2022 (publication date)')
 st.write(server_time)
 #st.write(yhat2.reshape(-1,len(yhat2)))
 ##############################################################   EQUITY #############################################################################
+import matplotlib.pyplot as plt
 tickers=('CL=F,AAPL,MSFT,NG=F')
 def data():
     data=yf.download(tickers =tickers,period="2000d",interval='1d',auto_adjust=True)
