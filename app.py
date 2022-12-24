@@ -190,6 +190,6 @@ plt.ylabel("capitale_iniziale",fontdict = font1)
 #plt.plot((df_roll['pred_roll_%change']).rolling(7).std())
 
 equity=((1000*df_roll['equity_sl']).cumsum()+10000)
-plt.plot(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280,color='red',label='MERLIN_SYSTEM')
-plt.plot((df_roll['real_roll_%change']*10000).cumsum()+10000+150,color='black',label='REALE')
+st.plot(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280,color='red',label='MERLIN_SYSTEM')
+st.plot((df_roll['real_roll_%change']*10000).cumsum()+10000+150,color='black',label='REALE')
 plt.legend(loc="upper center")
