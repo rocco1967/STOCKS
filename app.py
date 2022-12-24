@@ -195,4 +195,4 @@ real=((df_roll['real_roll_%change']*10000).cumsum()+10000+150)#,color='black',la
 #plt.legend(loc="upper center")
 st.write(system)
 fig, ax = plt.subplots()
-st.pyplot(system.all())
+st.pyplot(system.any())
