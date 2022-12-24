@@ -176,10 +176,8 @@ df_roll['commission']=df_roll['real_roll']*commission
         
 df_roll_filtered = df_roll[abs(df_roll['pred_roll_%change']) > 0.015 ]# portafoglio filtrato per predict > di tot per cento
 #data.head(10),data_filtered.shape
-
-
-plt.plot(df_roll_filtered['equity_com_sl'].cumsum(),color='red')
-plt.plot(df_roll['equity_com_sl'].cumsum(),color='orange')
-plt.plot(df_roll_filtered['equity'].cumsum())
-plt.plot(df_roll['real_roll_%change'].cumsum(),color='black')
+#plt.plot(df_roll_filtered['equity_com_sl'].cumsum(),color='red')
+#plt.plot(df_roll['equity_com_sl'].cumsum(),color='orange')
+#plt.plot(df_roll_filtered['equity'].cumsum())
+#plt.plot(df_roll['real_roll_%change'].cumsum(),color='black')
 df_roll_filtered
