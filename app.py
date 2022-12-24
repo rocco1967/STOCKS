@@ -183,13 +183,13 @@ df_roll_filtered = df_roll[abs(df_roll['pred_roll_%change']) > 0.015 ]# portafog
 #plt.plot(df_roll['real_roll_%change'].cumsum(),color='black')
 #df_roll_filtered
 from matplotlib.pyplot import figure
-figure(figsize=(16, 4), dpi=80)
-font1 = {'family':'serif','color':'red','size':20}
-plt.xlabel("TRADING_DAYS",fontdict = font1)
-plt.ylabel("capitale_iniziale",fontdict = font1)
+#figure(figsize=(16, 4), dpi=80)
+#font1 = {'family':'serif','color':'red','size':20}
+#plt.xlabel("TRADING_DAYS",fontdict = font1)
+#plt.ylabel("capitale_iniziale",fontdict = font1)
 #plt.plot((df_roll['pred_roll_%change']).rolling(7).std())
 
 equity=((1000*df_roll['equity_sl']).cumsum()+10000)
 st.pyplot(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280,color='red',label='MERLIN_SYSTEM')
 st.pyplot((df_roll['real_roll_%change']*10000).cumsum()+10000+150,color='black',label='REALE')
-plt.legend(loc="upper center")
+#plt.legend(loc="upper center")
