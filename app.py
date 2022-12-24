@@ -165,4 +165,21 @@ df_roll['real_change']=np.where(df_roll['real_roll'].pct_change()>0,1,-1)
 df_roll['real_roll_%change']=(df_roll['real_roll'].pct_change())
 df_roll['pred_roll_%change']=(df_roll['pred_roll'].pct_change())
 df_roll['equity']=df_roll['pred_change']*df_roll['real_roll_%change']
-df_roll
+#df_roll
+commission=0.01 ### 1 = 100%    deve essere semprePOSITIVO
+stoploss=-0.05 ### -1 = 100%    deve essere sempre col SEGNO MENO DAVANTI
+df_roll['equity_sl']=np.where(df_roll['equity']<stoploss,stoploss,df_roll['equity'])
+#data['Equity_com']=np.where(data['Equity']>0,(data['Equity']-commission),(data['Equity']-commission))
+df_roll['equity_com_sl']=np.where(df_roll['equity_sl']>0,(df_roll['equity_sl']-commission),(df_roll['equity_sl']-commission))#ORIG
+#data['Equity_com_sl']=np.where(data['Equity_sl']>0,(data['Equity_sl']-commission),(data['Equity_sl']-commission))
+df_roll['commission']=df_roll['real_roll']*commission 
+        
+df_roll_filtered = df_roll[abs(df_roll['pred_roll_%change']) > 0.015 ]# portafoglio filtrato per predict > di tot per cento
+#data.head(10),data_filtered.shape
+
+
+plt.plot(df_roll_filtered['equity_com_sl'].cumsum(),color='red')
+plt.plot(df_roll['equity_com_sl'].cumsum(),color='orange')
+plt.plot(df_roll_filtered['equity'].cumsum())
+plt.plot(df_roll['real_roll_%change'].cumsum(),color='black')
+df_roll_filtered
