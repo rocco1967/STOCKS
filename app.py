@@ -158,3 +158,11 @@ y = np.array(y)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, shuffle=False)
 model = pickle.load(open('stocks_RF.pk','rb'))
 pred=model.predict(x_test)
+df_roll=pd.DataFrame(y_test.reshape(-1,1)[-28:],columns=['real_roll'])#,pred.reshape(-1,1)[-10:-1]
+df_roll['pred_roll']=pd.DataFrame(pred.reshape(-1,1)[-28:],columns=['pred_roll'])
+df_roll['pred_change']=np.where(df_roll['pred_roll'].pct_change()>0,1,-1)
+df_roll['real_change']=np.where(df_roll['real_roll'].pct_change()>0,1,-1)
+df_roll['real_roll_%change']=(df_roll['real_roll'].pct_change())
+df_roll['pred_roll_%change']=(df_roll['pred_roll'].pct_change())
+df_roll['equity']=df_roll['pred_change']*df_roll['real_roll_%change']
+df_roll
