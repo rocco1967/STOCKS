@@ -192,10 +192,7 @@ import seaborn as sns
 #equity=((1000*df_roll['equity_sl']).cumsum()+10000)
 df_roll_filtered['system']=(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280)#,color='red',label='MERLIN_SYSTEM')
 #real=((df_roll['real_roll_%change']*10000).cumsum()+10000+150)#,color='black',label='REALE')
-#plt.legend(loc="upper center")
-#system=np.array(system)
-st.write(df_roll_filtered['system'])
-#fig, ax = plt.subplots()#figsize=(7, 3))
-#fig = plt.figure(figsize=(10, 4))
-#sns.lineplot(x = "distance", y = "mass", data = data_frame)
-st.line_chart(data=df_roll_filtered,x=None ,y=df_roll_filtered['system'])
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
+st.line_chart(chart_data)
