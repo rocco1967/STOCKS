@@ -195,6 +195,6 @@ system=(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280)#,color='
 #plt.legend(loc="upper center")
 #system=np.array(system)
 #st.write(system)
-fig, ay = plt.subplots()#figsize=(7, 3))
-ay=system
+fig, ax = plt.subplots()#figsize=(7, 3))
+ax.hist=(system)
 st.pyplot(fig)#,clear_figure=True)
