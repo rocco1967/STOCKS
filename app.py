@@ -195,5 +195,6 @@ df_roll_filtered['real']=((df_roll['real_roll_%change']*10000).cumsum()+10000+15
 chart_data = pd.DataFrame(
     df_roll_filtered['system'].values,df_roll_filtered['real'].values,
     columns=['merlin_system','real'])
+st.write(chart_data)
 st.line_chart(chart_data)
 st.write(server_time)
