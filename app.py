@@ -124,7 +124,7 @@ now2 = datetime.now()
 server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
 #image2=Image.open('trading_days.JPG')#('sfera.JPG')
 #st.image(image2)
-st.write('MERLIN SYSTEM FROM 15 NOVEMBER 2022....investment 10k USD (from publication date__today not included)')
+#st.write('MERLIN SYSTEM FROM 15 NOVEMBER 2022....investment 10k USD (from publication date__today not included)')
 #st.write(server_time)
 #st.write(yhat2.reshape(-1,len(yhat2)))
 ##############################################################   EQUITY #############################################################################
@@ -187,6 +187,7 @@ chart_data = pd.DataFrame(
     df_roll_filtered['system'].values,
     columns=['merlin_system'])
 chart_data2 = pd.DataFrame(df_roll_filtered['real'],columns=['real'])
+st.subheader('MERLIN_SYSTEM..10k USD...INVESTED')
 st.line_chart(chart_data)
 st.subheader('REAL..10k USD...INVESTED')
 st.line_chart(chart_data2)
