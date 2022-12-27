@@ -188,6 +188,6 @@ chart_data = pd.DataFrame(
     columns=['merlin_system'])
 chart_data2 = pd.DataFrame(df_roll_filtered['real'],columns=['real'])
 st.line_chart(chart_data)
-st.sub_header('REAL..10k USD...INVESTED')
+st.subheader('REAL..10k USD...INVESTED')
 st.line_chart(chart_data2)
 st.write(server_time)
