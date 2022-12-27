@@ -196,6 +196,6 @@ data=[[df_roll_filtered['system'].values],[df_roll_filtered['real'].values]]
 #chart_data = pd.DataFrame(
     #[df_roll_filtered['system'].values],[df_roll_filtered['real'].values],
     #columns=['merlin_system','real'])
-chart_data = pd.Data_frame(data,columns=['merlin_system','real'])    
+chart_data = pd.Data_Frame(data,columns=['merlin_system','real'])    
 st.line_chart(chart_data)
 st.write(server_time)
