@@ -195,4 +195,4 @@ df_roll_filtered['system']=(((10000*df_roll_filtered['equity_com_sl']).cumsum()+
 chart_data = pd.DataFrame(
     df_roll_filtered['system'].values,
     columns=['merlin_system'])
-st.line_chart(chart_data)
+st.pyplot(chart_data)
