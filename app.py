@@ -193,6 +193,6 @@ import seaborn as sns
 df_roll_filtered['system']=(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280)#,color='red',label='MERLIN_SYSTEM')
 #real=((df_roll['real_roll_%change']*10000).cumsum()+10000+150)#,color='black',label='REALE')
 chart_data = pd.DataFrame(
-    df_roll_filtered['system'],
+    df_roll_filtered['system'].values,
     columns=['merlin_system'])
 st.line_chart(chart_data)
