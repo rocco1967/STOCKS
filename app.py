@@ -192,7 +192,7 @@ import seaborn as sns
 #equity=((1000*df_roll['equity_sl']).cumsum()+10000)
 df_roll_filtered['system']=(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+254)-10000#,color='red',label='MERLIN_SYSTEM')
 df_roll_filtered['real']=((df_roll['real_roll_%change']*10000).cumsum()+10000+150)-10000#,color='black',label='REALE')
-data=([df_roll_filtered['system'].values,df_roll_filtered['real'].values])
+data=[df_roll_filtered['system'].values,df_roll_filtered['real'].values]
 #chart_data = pd.DataFrame(
     #[df_roll_filtered['system'].values],[df_roll_filtered['real'].values],
     #columns=['merlin_system','real'])
