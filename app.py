@@ -195,4 +195,4 @@ system=(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+280)#,color='
 #plt.legend(loc="upper center")
 st.write(system)
 #fig, ax = plt.subplots(figsize=(7, 3))
-#st.pyplot(fig=system,clear_figure=True)
+st.pyplot(fig=system,clear_figure=True)
