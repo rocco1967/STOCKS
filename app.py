@@ -176,18 +176,9 @@ df_roll['equity_com_sl']=np.where(df_roll['equity_sl']>0,(df_roll['equity_sl']-c
 df_roll['commission']=df_roll['real_roll']*commission 
         
 df_roll_filtered = df_roll[abs(df_roll['pred_roll_%change']) > 0.015 ]# portafoglio filtrato per predict > di tot per cento
-#data.head(10),data_filtered.shape
-#plt.plot(df_roll_filtered['equity_com_sl'].cumsum(),color='red')
-#plt.plot(df_roll['equity_com_sl'].cumsum(),color='orange')
-#plt.plot(df_roll_filtered['equity'].cumsum())
-#plt.plot(df_roll['real_roll_%change'].cumsum(),color='black')
-#df_roll_filtered
+
 from matplotlib.pyplot import figure
-#figure(figsize=(16, 4), dpi=80)
-#font1 = {'family':'serif','color':'red','size':20}
-#plt.xlabel("TRADING_DAYS",fontdict = font1)
-#plt.ylabel("capitale_iniziale",fontdict = font1)
-#plt.plot((df_roll['pred_roll_%change']).rolling(7).std())
+
 import seaborn as sns
 #equity=((1000*df_roll['equity_sl']).cumsum()+10000)
 df_roll_filtered['system']=(((10000*df_roll_filtered['equity_com_sl']).cumsum()+10000)+254)-10000#,color='red',label='MERLIN_SYSTEM')
@@ -196,7 +187,7 @@ chart_data = pd.DataFrame(
     df_roll_filtered['system'].values,
     columns=['merlin_system'])
 chart_data2 = pd.DataFrame(df_roll_filtered['real'],columns=['real'])
-
 st.line_chart(chart_data)
+st.sub_header('REAL..10k USD...INVESTED')
 st.line_chart(chart_data2)
 st.write(server_time)
