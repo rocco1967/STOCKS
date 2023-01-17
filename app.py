@@ -156,11 +156,11 @@ for i in range(lookback_window, len(data)):
 x = np.array(x)
 y = np.array(y)
 #x.reshape(-1,1),y.reshape(-1,1)
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, shuffle=False)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.0.05, shuffle=False)
 model = pickle.load(open('stocks_RF.pk','rb'))
 pred=model.predict(x_test)
-df_roll=pd.DataFrame(y_test.reshape(-1,1)[-38:],columns=['real_roll'])#,pred.reshape(-1,1)[-10:-1]
-df_roll['pred_roll']=pd.DataFrame(pred.reshape(-1,1)[-38:],columns=['pred_roll'])
+df_roll=pd.DataFrame(y_test.reshape(-1,1)[-41:],columns=['real_roll'])#,pred.reshape(-1,1)[-10:-1]
+df_roll['pred_roll']=pd.DataFrame(pred.reshape(-1,1)[-41:],columns=['pred_roll'])
 df_roll['pred_change']=np.where(df_roll['pred_roll'].pct_change()>0,1,-1)
 df_roll['real_change']=np.where(df_roll['real_roll'].pct_change()>0,1,-1)
 df_roll['real_roll_%change']=(df_roll['real_roll'].pct_change())
