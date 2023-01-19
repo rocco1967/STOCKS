@@ -52,7 +52,7 @@ now = date.today()
 #@st.cache
 def new_data():
     #tickers=st.text_input('SIMBOLO')
-    data1=yf.download(tickers = tickers,period="500d",interval='1d',auto_adjust=True)
+    data1=yf.download(tickers = tickers,period="1000d",interval='1d',auto_adjust=True)
     #data#=data.T#=data['Close']#[:-1]
     data1=(data1['Close'])
     data1=data1.reset_index()
@@ -134,7 +134,7 @@ server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
 import matplotlib.pyplot as plt
 tickers=('CL=F,AAPL,MSFT,NG=F')
 def data():
-    data=yf.download(tickers =tickers,period="500d",interval='1d',auto_adjust=True)
+    data=yf.download(tickers =tickers,period="1000d",interval='1d',auto_adjust=True)
     data=(data['Close'])
     data=data[data>0]
     data=data.reset_index()
