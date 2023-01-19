@@ -132,7 +132,7 @@ server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
 #st.write(yhat2.reshape(-1,len(yhat2)))
 ##############################################################   EQUITY #############################################################################
 import matplotlib.pyplot as plt
-tickers=('CL=F,AAPL,MSFT,NG=F')
+tickers=('CL=F)#,AAPL,MSFT,NG=F')
 def data():
     data=yf.download(tickers =tickers,period="1000d",interval='1d',auto_adjust=True)
     data=(data['Close'])
