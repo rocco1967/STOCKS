@@ -1,4 +1,5 @@
-scikit-learn==1 
+scikit-learn==1.1
+sklearn
 pickle5
 pandas
 streamlit
