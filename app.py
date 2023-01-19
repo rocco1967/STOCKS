@@ -142,11 +142,12 @@ def data():
     data=data.set_index('Date').dropna()
     return data
 data=data()
-st.write(data)
+#st.write(data)
 if data[-1:].index.values==np.array(now):
     data=data[:-1]
 else:
     data=data.round(2)
+st.write(data)    
 #data['Target']=data['CL=F'].shift(-1)     #  ORIGINALE
 data['Target']=data['Close'].shift(-1)  
 data['Target']=data['Target'].fillna(data['Target'].shift(1))
