@@ -1,9 +1,9 @@
-sklearn
+sklearn==0.18
 pickle5
 pandas
 streamlit
 Pillow
 yfinance
-linear-tree
+
 matplotlib
 seaborn
