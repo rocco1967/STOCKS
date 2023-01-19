@@ -49,7 +49,7 @@ now = date.today()
 #@st.cache
 def new_data():
     #tickers=st.text_input('SIMBOLO')
-    data1=yf.download(tickers = tickers,period="50d",interval='1d',auto_adjust=True)
+    data1=yf.download(tickers = tickers,period="500d",interval='1d',auto_adjust=True)
     #data#=data.T#=data['Close']#[:-1]
     data1=(data1['Close'])
     data1=data1.reset_index()
