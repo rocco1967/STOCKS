@@ -148,8 +148,8 @@ else:
     data=data.round(2)
 data['Target']=data['CL=F'].shift(-1)     #  ORIGINALE
 data['Target']=data['Target'].fillna(data['Target'].shift(1))
-#from sklearn.model_selection import train_test_split
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
+#from sklearn.cross_validation import train_test_split
 data=data['CL=F'].values# se si usa il multicross al posto di Close mettere il Ticker
 data=data[data>0]#.copy()
 lookback_window = 7
