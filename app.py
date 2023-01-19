@@ -131,7 +131,7 @@ server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
 import matplotlib.pyplot as plt
 tickers=('CL=F,AAPL,MSFT,NG=F')
 def data():
-    data=yf.download(tickers =tickers,period="2000d",interval='1d',auto_adjust=True)
+    data=yf.download(tickers =tickers,period="500d",interval='1d',auto_adjust=True)
     data=(data['Close'])
     data=data[data>0]
     data=data.reset_index()
