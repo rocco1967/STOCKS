@@ -142,6 +142,7 @@ def data():
     data=data.set_index('Date').dropna()
     return data
 data=data()
+st.write(data)
 if data[-1:].index.values==np.array(now):
     data=data[:-1]
 else:
@@ -160,7 +161,7 @@ for i in range(lookback_window, len(data)):
 x = np.array(x)
 y = np.array(y)
 #x.reshape(-1,1),y.reshape(-1,1)
-st.write(data)
+
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, shuffle=False)
 model = pickle.load(open('stocks_RF.pk','rb'))
 pred=model.predict(x_test)
