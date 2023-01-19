@@ -147,7 +147,8 @@ if data[-1:].index.values==np.array(now):
     data=data[:-1]
 else:
     data=data.round(2)
-data['Target']=data['CL=F'].shift(-1)     #  ORIGINALE
+#data['Target']=data['CL=F'].shift(-1)     #  ORIGINALE
+data['Target']=data['Close'].shift(-1)  
 data['Target']=data['Target'].fillna(data['Target'].shift(1))
 from sklearn.model_selection import train_test_split
 #from sklearn.cross_validation import train_test_split
