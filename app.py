@@ -110,7 +110,7 @@ st.write(((x_new_data3.flatten().reshape(-1,7)))[-7:])
 
 #new_data3=(new_data[-21:].values.flatten()).reshape(-1,7)
 yhat2=model.predict(((x_new_data3.flatten().reshape(-1,7))[-10:]))##
-st.write(yhat2)
+#st.write(yhat2)
 #st.write((x_new_data3.flatten().reshape(-1,7))[-9:])
 #st.write((x_new_data3[-5:]).reshape(-1,7))
 dfyhat = pd.DataFrame(data=yhat2 )
@@ -177,7 +177,7 @@ df_roll['real_roll_%change']=(df_roll['real_roll'].pct_change())
 df_roll['pred_roll_%change']=(df_roll['pred_roll'].pct_change())
 df_roll['equity']=df_roll['pred_change']*df_roll['real_roll_%change']
 #df_roll
-commission=0.01 ### 1 = 100%    deve essere semprePOSITIVO
+commission=0.005 ### 1 = 100%    deve essere semprePOSITIVO
 stoploss=-0.05 ### -1 = 100%    deve essere sempre col SEGNO MENO DAVANTI
 df_roll['equity_sl']=np.where(df_roll['equity']<stoploss,stoploss,df_roll['equity'])
 #data['Equity_com']=np.where(data['Equity']>0,(data['Equity']-commission),(data['Equity']-commission))
