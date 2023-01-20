@@ -164,7 +164,7 @@ x = np.array(x)
 y = np.array(y)
 #x.reshape(-1,1),y.reshape(-1,1)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, shuffle=False)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, shuffle=False)
 model = pickle.load(open('stocks_RF.pk','rb'))
 pred=model.predict(x_test)
 df_roll=pd.DataFrame(y_test.reshape(-1,1)[-44:],columns=['real_roll'])#,pred.reshape(-1,1)[-10:-1]
