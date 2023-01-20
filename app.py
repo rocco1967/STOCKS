@@ -52,7 +52,7 @@ now = date.today()
 #@st.cache
 def new_data():
     #tickers=st.text_input('SIMBOLO')
-    data1=yf.download(tickers = tickers,period="1000d",interval='1d',auto_adjust=True)
+    data1=yf.download(tickers = tickers,period="2000d",interval='1d',auto_adjust=True)
     #data#=data.T#=data['Close']#[:-1]
     data1=(data1['Close'])
     data1=data1.reset_index()
@@ -134,7 +134,7 @@ server_time = now2.strftime("DATE_SERVER_%d/%m/%y_TIME_%H:%M:%S")
 import matplotlib.pyplot as plt
 tickers=('CL=F')#,AAPL,MSFT,NG=F')
 def data():
-    data=yf.download(tickers =tickers,period="1000d",interval='1d',auto_adjust=True)
+    data=yf.download(tickers =tickers,period="2000d",interval='1d',auto_adjust=True)
     data=(data['Close'])
     data=data[data>0]
     data=data.reset_index()
@@ -164,11 +164,11 @@ x = np.array(x)
 y = np.array(y)
 #x.reshape(-1,1),y.reshape(-1,1)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, shuffle=False)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.05, shuffle=False)
 model = pickle.load(open('stocks_RF.pk','rb'))
 pred=model.predict(x_test)
-df_roll=pd.DataFrame(y_test.reshape(-1,1)[-39:],columns=['real_roll'])#,pred.reshape(-1,1)[-10:-1]
-df_roll['pred_roll']=pd.DataFrame(pred.reshape(-1,1)[-39:],columns=['pred_roll'])
+df_roll=pd.DataFrame(y_test.reshape(-1,1)[-44:],columns=['real_roll'])#,pred.reshape(-1,1)[-10:-1]
+df_roll['pred_roll']=pd.DataFrame(pred.reshape(-1,1)[-44:],columns=['pred_roll'])
 df_roll['pred_change']=np.where(df_roll['pred_roll'].pct_change()>0,1,-1)
 df_roll['real_change']=np.where(df_roll['real_roll'].pct_change()>0,1,-1)
 df_roll['real_roll_%change']=(df_roll['real_roll'].pct_change())
