@@ -20,7 +20,7 @@ import yfinance as yf
 import streamlit as st
 from sklearn.linear_model import SGDRegressor
 from PIL import Image
-from lineartree import LinearTreeRegressor,LinearBoostRegressor
+#from lineartree import LinearTreeRegressor,LinearBoostRegressor
 from datetime import datetime,date,timedelta
 #@st.cache
 image=Image.open('petrolio.JPG')#('sfera.JPG')
