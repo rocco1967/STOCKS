@@ -169,8 +169,8 @@ y = np.array(y)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, shuffle=False)
 model = pickle.load(open('stocks_RF.pk','rb'))
 pred=model.predict(x_test)
-df_roll=pd.DataFrame(y_test.reshape(-1,1)[-67:],columns=['real_roll'])#,pred.reshape(-1,1)[-10:-1]
-df_roll['pred_roll']=pd.DataFrame(pred.reshape(-1,1)[-67:],columns=['pred_roll'])
+df_roll=pd.DataFrame(y_test.reshape(-1,1)[-71:],columns=['real_roll'])#,pred.reshape(-1,1)[-10:-1]
+df_roll['pred_roll']=pd.DataFrame(pred.reshape(-1,1)[-71:],columns=['pred_roll'])
 df_roll['pred_change']=np.where(df_roll['pred_roll'].pct_change()>0,1,-1)
 df_roll['real_change']=np.where(df_roll['real_roll'].pct_change()>0,1,-1)
 df_roll['real_roll_%change']=(df_roll['real_roll'].pct_change())
@@ -185,7 +185,7 @@ df_roll['equity_com_sl']=np.where(df_roll['equity_sl']>0,(df_roll['equity_sl']-c
 #data['Equity_com_sl']=np.where(data['Equity_sl']>0,(data['Equity_sl']-commission),(data['Equity_sl']-commission))
 df_roll['commission']=df_roll['real_roll']*commission 
         
-df_roll_filtered = df_roll[abs(df_roll['pred_roll_%change']) > 0.015 ]# portafoglio filtrato per predict > di tot per cento
+df_roll_filtered = df_roll[abs(df_roll['pred_roll_%change']) > 0.02 ]# portafoglio filtrato per predict > di tot per cento
 
 from matplotlib.pyplot import figure
 
