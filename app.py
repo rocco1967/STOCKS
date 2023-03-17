@@ -185,7 +185,7 @@ df_roll['equity_com_sl']=np.where(df_roll['equity_sl']>0,(df_roll['equity_sl']-c
 #data['Equity_com_sl']=np.where(data['Equity_sl']>0,(data['Equity_sl']-commission),(data['Equity_sl']-commission))
 df_roll['commission']=df_roll['real_roll']*commission 
         
-df_roll_filtered = df_roll[abs(df_roll['pred_roll_%change']) > 0.02 ]# portafoglio filtrato per predict > di tot per cento
+df_roll_filtered = df_roll[abs(df_roll['pred_roll_%change']) > 0.015 ]# portafoglio filtrato per predict > di tot per cento
 
 from matplotlib.pyplot import figure
 
