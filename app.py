@@ -117,12 +117,12 @@ dfyhat = pd.DataFrame(data=yhat2 )
 #st.write(dfyhat)
 #change=abs(dfyhat.pct_change().dropna())
 #yhat2=np.where(change>0.015,'TRADE','STAY_FLAT')###  ORIGINALE
-yhat2=np.where(dfyhat.pct_change()>0.014999,'TRADE_LONG',(np.where(dfyhat.pct_change()<-0.014999,'TRADE_SHORT','FLAT')))
+yhat2=np.where(dfyhat.pct_change()>0.019999,'TRADE_LONG',(np.where(dfyhat.pct_change()<-0.019999,'TRADE_SHORT','FLAT')))
 #st.write(yhat2) ############################
 st.subheader(yhat2[-1:])
 #st.subheader(new_data3)
 if st.button('FORECAST_CRUDE-OIL'):
-   prediction=yhat#np.where('change'>0.015,yhat,0)
+   prediction=yhat#np.where('change'>0.0199,yhat,0)
    st.subheader(f' FORECAST + un giorno in archivio ... +- 2% ..   {prediction[0]:.4f} USD')
 #st.subheader(f' OGGI è ...   {data} ')
 now2 = datetime.now()
