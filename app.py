@@ -118,9 +118,9 @@ dfyhat = pd.DataFrame(data=yhat2 )
 #change=abs(dfyhat.pct_change().dropna())
 #yhat2=np.where(change>0.015,'TRADE','STAY_FLAT')###  ORIGINALE
 yhat2=np.where(dfyhat.pct_change()>0.019999,'TRADE_LONG',(np.where(dfyhat.pct_change()<-0.019999,'TRADE_SHORT','FLAT')))
-st.write(yhat2) ############################
-st.subheader(yhat2[-1:])
-#st.subheader(f' TODAY MACHINE LEARNING  FILTERED POSITION...... {yhat2[-1:]}')######
+#st.write(yhat2) ############################
+#st.subheader(yhat2[-1:])
+st.subheader(f' TODAY MACHINE LEARNING  FILTERED POSITION...... {yhat2[-1:]}')######
             
 #st.subheader(new_data3)
 if st.button('FORECAST_CRUDE-OIL'):
