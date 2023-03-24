@@ -13,7 +13,6 @@ import time
 from sklearn.ensemble import RandomForestRegressor
 from datetime import datetime
 data=time.strftime("%d/%m/%Y")
-#data = pd.read_csv(r"C:\Users\39333\desktop\ANACONDA\FuelConsumption.csv")
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler,MinMaxScaler
 import yfinance as yf
