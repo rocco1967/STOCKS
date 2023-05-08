@@ -199,6 +199,7 @@ chart_data = pd.DataFrame(
     columns=['merlin_system'])
 chart_data2 = pd.DataFrame(df_roll_filtered['real'],columns=['real'])
 st.subheader('MERLIN_SYSTEM..10k USD...INVESTED..from 15 NOVEMBER')
+st.subheader('GAIN : ')
 st.write('merlin doesn^t trade every day it has a trend filter')
 st.line_chart(chart_data)
 st.subheader('WTI..BUY.and..HOLD ..10k USD...INVESTED')
