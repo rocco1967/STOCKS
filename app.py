@@ -6,7 +6,7 @@ Created on Thu Oct  6 13:05:02 2022
 """
 import streamlit as st
 st.set_page_config(page_title="MERLIN AI")
-st.subheader(' artificial intelligentTrading Signal Generator on WTI')
+st.subheader(' Artificial IntelligentTrading Signal Generator on WTI')
 import numpy as np
 import pandas as pd
 import pickle
