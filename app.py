@@ -4,6 +4,7 @@ Created on Thu Oct  6 13:05:02 2022
 
 @author: 39333
 """
+st.set_page_config(page_title="side hustle AI")
 import numpy as np
 import pandas as pd
 import pickle
