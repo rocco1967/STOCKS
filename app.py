@@ -5,7 +5,7 @@ Created on Thu Oct  6 13:05:02 2022
 @author: 39333
 """
 import streamlit as st
-st.set_page_config(page_title="MERLIN AI")
+st.set_page_config(page_title="AI side hustle")
 st.subheader(' Artificial IntelligenceTrading Signal Generator on WTI')
 import numpy as np
 import pandas as pd
