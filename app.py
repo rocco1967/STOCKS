@@ -4,6 +4,7 @@ Created on Thu Oct  6 13:05:02 2022
 
 @author: 39333
 """
+import streamlit as st
 st.set_page_config(page_title="side hustle AI")
 import numpy as np
 import pandas as pd
@@ -17,7 +18,7 @@ data=time.strftime("%d/%m/%Y")
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler,MinMaxScaler
 import yfinance as yf
-import streamlit as st
+#import streamlit as st
 from sklearn.linear_model import SGDRegressor
 from PIL import Image
 #from lineartree import LinearTreeRegressor,LinearBoostRegressor
