@@ -29,7 +29,7 @@ image=Image.open('petrolio.JPG')#('sfera.JPG')
 image = image.resize((1000, 400))
 st.image(image)
 import sklearn
-st.write(sklearn.__version__)
+#st.write(sklearn.__version__) #sklearn version
 
 #st.markdown('')
 #st.subheader('..........................MERLIN.........................')
