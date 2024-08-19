@@ -30,7 +30,9 @@ image = image.resize((1000, 400))
 st.image(image)
 import sklearn
 #st.write(sklearn.__version__) #sklearn version
-
+import warnings
+warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
 #st.markdown('')
 #st.subheader('..........................MERLIN.........................')
 st.subheader('.........................CRUDE_OIL_WTI_FORECAST.....................')
