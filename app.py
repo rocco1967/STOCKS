@@ -161,7 +161,7 @@ data['Target']=data['CL=F'].shift(-1)     #  ORIGINALE
 data['Target']=data['Target'].fillna(data['Target'].shift(1))
 from sklearn.model_selection import train_test_split
 #from sklearn.cross_validation import train_test_split
-data=data['Close'].values# se si usa il multicross al posto di Close mettere il Ticker
+data=data['CL=F'].values#data=data['Close'].values# se si usa il multicross al posto di Close mettere il Ticker
 data=data[data>0]#.copy()
 lookback_window = 7
 x, y = [], []
