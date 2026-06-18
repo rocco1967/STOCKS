@@ -183,7 +183,7 @@ df_roll['real_roll_%change']=(df_roll['real_roll'].pct_change())
 df_roll['pred_roll_%change']=(df_roll['pred_roll'].pct_change())
 df_roll['equity']=df_roll['pred_change']*df_roll['real_roll_%change']
 #df_roll
-commission=0.0005 ### 1 = 100%    deve essere semprePOSITIVO
+commission=0.005 ### 1 = 100%    deve essere semprePOSITIVO
 stoploss=-0.05 ### -1 = 100%    deve essere sempre col SEGNO MENO DAVANTI
 df_roll['equity_sl']=np.where(df_roll['equity']<stoploss,stoploss,df_roll['equity'])
 #data['Equity_com']=np.where(data['Equity']>0,(data['Equity']-commission),(data['Equity']-commission))
