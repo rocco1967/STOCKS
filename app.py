@@ -11,6 +11,14 @@ st.set_page_config(
     layout="wide"
 )
 st.title("Previsioni sul petrolio greggio WTI")
+st.warning(
+    "⚠️ **Avvertenza:** Merlin è un esperimento gratuito di analisi quantitativa "
+    "sul petrolio WTI, con finalità esclusivamente informative e didattiche. "
+    "I segnali sono generati automaticamente da un modello di intelligenza artificiale "
+    "e **non costituiscono consulenza in materia di investimenti**, raccomandazione "
+    "personalizzata o invito ad acquistare o vendere strumenti finanziari. "
+    "Il trading su futures comporta un rischio elevato di perdita del capitale."
+)
 st.subheader("Segnali di trading con intelligenza artificiale, aggiornati ogni giorno")
 #st.set_page_config(page_title="AI side hustle")
 #st.subheader(' Artificial Intelligence_Trading Signal Generator on WTI')
@@ -87,6 +95,10 @@ yhat=model.predict(x1).round(5)
 #st.title('........STOCK_FORECAST.........')
 #st.sidebar.subheader('ULTIMO DATO IN ARCHIVIO DEL SIMBOLO SCELTO PER IL CALCOLO')
 st.sidebar.subheader('AGGIORNAMENTO AUTOMATICO DA YAHOO FINANCE ORARIO NEW YORK')
+st.sidebar.caption(
+    "Dati: Yahoo Finance (futures WTI, ticker CL=F), possibili ritardi o imprecisioni. "
+    "Le performance passate non sono indicative di quelle future."
+)
 #st.sidebar.subheader('ORARIO NEW YORK')
 st.sidebar.subheader('ULTIMI 7 DATI IN ARCHIVIO WTI....')
 st.sidebar.write(new_data[-7:])#(f'ULTIMi DATO IN ARCHIVIO {new_data[-1:]:.2f}')
@@ -218,5 +230,12 @@ st.line_chart(chart_data)
 st.subheader('WTI..BUY.and..HOLD ..10k USD...INVESTED')
 st.line_chart(chart_data2)
 st.write(server_time)
-
+st.warning(
+    "⚠️ **Avvertenza:** Merlin è un esperimento gratuito di analisi quantitativa "
+    "sul petrolio WTI, con finalità esclusivamente informative e didattiche. "
+    "I segnali sono generati automaticamente da un modello di intelligenza artificiale "
+    "e **non costituiscono consulenza in materia di investimenti**, raccomandazione "
+    "personalizzata o invito ad acquistare o vendere strumenti finanziari. "
+    "Il trading su futures comporta un rischio elevato di perdita del capitale."
+)
 
