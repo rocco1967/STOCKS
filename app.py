@@ -238,4 +238,33 @@ st.warning(
     "personalizzata o invito ad acquistare o vendere strumenti finanziari. "
     "Il trading su futures comporta un rischio elevato di perdita del capitale."
 )
+with st.expander("Note legali e avvertenze sui rischi"):
+    st.markdown("""
+**Cos'è Merlin.** Merlin è un progetto personale, gratuito e senza scopo di lucro,
+che elabora i prezzi storici del petrolio WTI con un modello di intelligenza
+artificiale [descrizione breve: es. rete neurale / modello statistico] per produrre
+indicazioni di tendenza a scopo didattico.
+
+**Nessuna consulenza finanziaria.** Le indicazioni mostrate sono output automatici
+di un algoritmo. Non tengono conto della situazione finanziaria, degli obiettivi
+o della propensione al rischio di chi le consulta e non costituiscono consulenza
+in materia di investimenti, né ricerca in materia di investimenti, né sollecitazione
+al pubblico risparmio. L'autore non è un consulente finanziario abilitato.
+
+**Rischi.** Il petrolio e i relativi futures sono strumenti molto volatili. Operare
+con leva o su derivati può comportare perdite anche superiori al capitale investito.
+Il modello può sbagliare, e i risultati passati non garantiscono quelli futuri.
+
+**Dati.** I prezzi provengono da Yahoo Finance e possono essere ritardati, incompleti
+o errati. Non si garantiscono accuratezza, continuità o disponibilità del servizio,
+che può essere modificato o interrotto in qualsiasi momento.
+
+**Responsabilità.** L'autore declina ogni responsabilità per perdite o danni derivanti
+dall'uso delle informazioni presenti. Ogni decisione di investimento è presa
+autonomamente e sotto la piena responsabilità dell'utente, che è invitato a
+rivolgersi a un professionista abilitato.
+
+**Contatti e privacy.** [Link a modulo di contatto]. L'app non raccoglie dati
+personali degli utenti [verifica che sia vero].
+""")
 
