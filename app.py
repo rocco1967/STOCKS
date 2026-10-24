@@ -5,8 +5,15 @@ Created on Thu Oct  6 13:05:02 2022
 @author: 39333
 """
 import streamlit as st
-st.set_page_config(page_title="AI side hustle")
-st.subheader(' Artificial Intelligence_Trading Signal Generator on WTI')
+st.set_page_config(
+    page_title="Previsioni petrolio WTI oggi | Segnali di trading con AI",
+    page_icon="🛢️",
+    layout="wide"
+)
+st.title("Previsioni sul petrolio greggio WTI")
+st.subheader("Segnali di trading con intelligenza artificiale, aggiornati ogni giorno")
+#st.set_page_config(page_title="AI side hustle")
+#st.subheader(' Artificial Intelligence_Trading Signal Generator on WTI')
 import numpy as np
 import pandas as pd
 import pickle
