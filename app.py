@@ -19,6 +19,13 @@ st.warning(
     "personalizzata o invito ad acquistare o vendere strumenti finanziari. "
     "Il trading su futures comporta un rischio elevato di perdita del capitale."
 )
+st.header("Chi siamo")
+st.markdown("""
+Merlin è un progetto indipendente di [nome o pseudonimo], appassionato di
+[analisi dei dati / mercati / programmazione]. Nasce per sperimentare l'uso
+dell'intelligenza artificiale sulle serie storiche del petrolio WTI.
+Il servizio è gratuito e non prevede commissioni, abbonamenti né intermediazione.
+""")
 st.subheader("Segnali di trading con intelligenza artificiale, aggiornati ogni giorno")
 #st.set_page_config(page_title="AI side hustle")
 #st.subheader(' Artificial Intelligence_Trading Signal Generator on WTI')
