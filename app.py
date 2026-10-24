@@ -10,7 +10,7 @@ st.set_page_config(
     page_icon="🛢️",
     layout="wide"
 )
-st.title("Previsioni sul petrolio greggio WTI")
+st.title("Previsioni sul petrolio greggio WTI con IA")
 st.warning(
     "⚠️ **Avvertenza:** Merlin è un esperimento gratuito di analisi quantitativa "
     "sul petrolio WTI, con finalità esclusivamente informative e didattiche. "
