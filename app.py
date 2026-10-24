@@ -21,7 +21,7 @@ st.warning(
 )
 st.header("Chi siamo")
 st.markdown("""
-Merlin è un progetto indipendente di [nome o pseudonimo], appassionato di
+Merlin è un progetto indipendente , appassionato di
 [analisi dei dati / mercati / programmazione]. Nasce per sperimentare l'uso
 dell'intelligenza artificiale sulle serie storiche del petrolio WTI.
 Il servizio è gratuito e non prevede commissioni, abbonamenti né intermediazione.
