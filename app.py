@@ -274,4 +274,8 @@ rivolgersi a un professionista abilitato.
 **Contatti e privacy.** [Link a modulo di contatto]. L'app non raccoglie dati
 personali degli utenti [verifica che sia vero].
 """)
+grafico = pd.DataFrame({"Close": prezzi, "yhat": dfyhat}).tail(250)
+st.line_chart(grafico)
 
+st.line_chart(equity.tail(250) / equity.tail(250).iloc[0])
+st.caption("Simulazione senza costi né slippage. I risultati passati non sono indicativi di quelli futuri.")
