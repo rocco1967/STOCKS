@@ -339,3 +339,7 @@ r.index = pd.to_datetime(r.index)
 g21 = r[r.index.day == 21].abs()
 st.write("mediana giorno 21:", round(g21.median(), 4), "| mediana altri giorni:", round(r[r.index.day != 21].abs().median(), 4))
 st.write(g21.sort_values(ascending=False).head(5))   # i 5 giorni 21 più grandi, con la data
+r = new_data.iloc[:, 0].astype(float).pct_change().dropna()
+r.index = pd.to_datetime(r.index)
+r = r[r.abs() < 1]            # toglie i giorni di aprile 2020 con movimenti assurdi
+st.write(r.abs().groupby(r.index.day).agg(["mean", "median", "count"]).loc[17:23].round(4))
