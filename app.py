@@ -274,8 +274,60 @@ rivolgersi a un professionista abilitato.
 **Contatti e privacy.** [Link a modulo di contatto]. L'app non raccoglie dati
 personali degli utenti [verifica che sia vero].
 """)
-grafico = pd.DataFrame({"Close": prezzi, "yhat": dfyhat}).tail(250)
-st.line_chart(grafico)
+# ===== PERIODO FUORI CAMPIONE =====
+DATA_INIZIO = "2022-11-15"   # primo giorno fuori campione (cambiala se serve)
+SOGLIA = 0.01999999          # filtro del 2%
+COMMISSIONE = 0.002          # 0,2% a operazione
+STOPLOSS = -0.05
+CAPITALE = 10000
 
-st.line_chart(equity.tail(250) / equity.tail(250).iloc[0])
-st.caption("Simulazione senza costi né slippage. I risultati passati non sono indicativi di quelli futuri.")
+serie = new_data.iloc[:, 0].astype(float)
+date_idx = pd.to_datetime(serie.index)
+vals = serie.values
+n = len(vals)
+
+X_all = np.array([vals[t - 7:t] for t in range(7, n)])
+pred = pd.Series(model.predict(X_all), index=date_idx[7:])
+reale = pd.Series(vals[7:], index=date_idx[7:])
+
+var_pred = pred.pct_change()
+posizione = np.where(var_pred > SOGLIA, 1, np.where(var_pred < -SOGLIA, -1, 0))
+rend = reale.pct_change()
+lordo = pd.Series(posizione, index=pred.index) * rend
+lordo = lordo.where(lordo >= STOPLOSS, STOPLOSS)
+traded = posizione != 0
+netto = lordo - np.where(traded, COMMISSIONE, 0.0)
+
+fc = pred.index >= pd.Timestamp(DATA_INIZIO)
+netto_fc = netto[fc].fillna(0)
+rend_fc = rend[fc].fillna(0)
+traded_fc = traded[fc]
+
+equity_sys = CAPITALE + (CAPITALE * netto_fc).cumsum()
+equity_bh = CAPITALE + (CAPITALE * rend_fc).cumsum()
+
+n_op = int(traded_fc.sum())
+vincenti = int(((netto_fc > 0) & traded_fc).sum())
+drawdown = (equity_sys - equity_sys.cummax()).min()
+risultato_sys = equity_sys.iloc[-1] - CAPITALE
+risultato_bh = equity_bh.iloc[-1] - CAPITALE
+
+st.subheader(f"PERIODO FUORI CAMPIONE (dal {DATA_INIZIO}, dati mai visti dal modello)")
+c1, c2, c3, c4 = st.columns(4)
+c1.metric("Operazioni", n_op)
+c2.metric("% operazioni in utile", f"{100 * vincenti / n_op:.0f}%" if n_op else "n/d")
+c3.metric("Risultato MERLIN (USD)", f"{risultato_sys:,.0f}")
+c4.metric("Buy & hold (USD)", f"{risultato_bh:,.0f}")
+st.write(f"Massimo drawdown della simulazione: {drawdown:,.0f} USD su {CAPITALE:,} investiti.")
+
+fig, ax = plt.subplots(figsize=(11, 4))
+ax.plot(equity_sys.index, equity_sys.values, label="MERLIN (commissioni e stop loss)", color="tab:orange")
+ax.plot(equity_bh.index, equity_bh.values, label="Buy & hold WTI", color="black", alpha=0.7)
+ax.axhline(CAPITALE, color="gray", linewidth=0.8)
+ax.legend()
+ax.grid(alpha=0.3)
+ax.set_title(f"Simulazione fuori campione dal {DATA_INIZIO}")
+st.pyplot(fig)
+st.caption("Simulazione su dati storici: puntata fissa, commissione 0,2% per operazione, stop loss -5% "
+           "assunto eseguito esattamente a quel livello (nella realtà gap e slippage possono peggiorarlo). "
+           "I risultati passati non sono indicativi di quelli futuri.")
