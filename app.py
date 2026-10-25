@@ -328,6 +328,6 @@ ax.legend()
 ax.grid(alpha=0.3)
 ax.set_title(f"Simulazione fuori campione dal {DATA_INIZIO}")
 st.pyplot(fig)
-st.caption("Simulazione su dati storici: puntata fissa, commissione 0,2% per operazione, stop loss -5% "
+st.caption("Simulazione su dati storici: puntata fissa, commissione 0,2% per operazione, stop loss -2% "
            "assunto eseguito esattamente a quel livello (nella realtà gap e slippage possono peggiorarlo). "
            "I risultati passati non sono indicativi di quelli futuri.")
