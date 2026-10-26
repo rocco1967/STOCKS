@@ -278,7 +278,7 @@ personali degli utenti [verifica che sia vero].
 DATA_INIZIO = "2022-11-15"   # primo giorno fuori campione (cambiala se serve)
 SOGLIA = 0.01999999          # filtro del 2%
 COMMISSIONE = 0.002          # 0,2% a operazione
-STOPLOSS = -0.05
+STOPLOSS = -0.03
 CAPITALE = 10000
 
 serie = new_data.iloc[:, 0].astype(float)
