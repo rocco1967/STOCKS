@@ -278,7 +278,7 @@ personali degli utenti [verifica che sia vero].
 DATA_INIZIO = "2022-11-15"   # primo giorno fuori campione (cambiala se serve)
 SOGLIA = 0.01999999          # filtro del 2%
 COMMISSIONE = 0.002          # 0,2% a operazione
-STOPLOSS = -0.03
+STOPLOSS = -0.02
 CAPITALE = 10000
 
 serie = new_data.iloc[:, 0].astype(float)
@@ -331,6 +331,8 @@ st.pyplot(fig)
 st.caption("Simulazione su dati storici: puntata fissa, commissione 0,2% per operazione, stop loss -2% "
            "assunto eseguito esattamente a quel livello (nella realtà gap e slippage possono peggiorarlo). "
            "I risultati passati non sono indicativi di quelli futuri.")
+
+#############################################################################################################################
 r = new_data.iloc[:, 0].astype(float).pct_change().dropna()
 r.index = pd.to_datetime(r.index)
 st.write(r.abs().groupby(r.index.day).mean().round(4))
