@@ -110,7 +110,7 @@ st.sidebar.caption(
 st.sidebar.subheader('ULTIMI 7 DATI IN ARCHIVIO WTI....')
 st.sidebar.write(new_data[-7:])#(f'ULTIMi DATO IN ARCHIVIO {new_data[-1:]:.2f}')
 #st.sidebar.write('PER INFORMAZIONI.....')
-st.sidebar.info('gianfranco.fa@gmail.com')
+st.sidebar.info('github..rocco1967')
 #filter=   abs((yhat[-1:]/yhat[-2:-1])-1)
 st.markdown(
     """
