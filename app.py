@@ -231,12 +231,12 @@ chart_data = pd.DataFrame(
 chart_data2 = pd.DataFrame(df_roll_filtered['real'],columns=['real'])
 st.subheader('MERLIN_SYSTEM..10k USD...INVESTED..from 15 NOVEMBER')
 
-st.write('merlin doesn^t trade every day it has a trend filter')
-st.subheader('GAIN : ')
-st.line_chart(chart_data)
-st.subheader('WTI..BUY.and..HOLD ..10k USD...INVESTED')
-st.line_chart(chart_data2)
-st.write(server_time)
+#st.write('merlin doesn^t trade every day it has a trend filter')##########   grafico   gain
+#st.subheader('GAIN : ')
+#st.line_chart(chart_data)
+#st.subheader('WTI..BUY.and..HOLD ..10k USD...INVESTED')
+#st.line_chart(chart_data2)
+#st.write(server_time)
 st.warning(
     "⚠️ **Avvertenza:** Merlin è un esperimento gratuito di analisi quantitativa "
     "sul petrolio WTI, con finalità esclusivamente informative e didattiche. "
